@@ -1,4 +1,3 @@
 # base-goody-hut-gold
 
-This is a template repo.
-
+A `GoodyHut` that provides the `Unit`s `Player` with 50 `Gold`.

@@ -3,7 +3,7 @@ import {
   instance as playerTreasuryRegistryInstance,
 } from '@civ-clone/core-treasury/PlayerTreasuryRegistry';
 import Action from '@civ-clone/core-goody-hut/Action';
-import { Gold as GoldYield } from '@civ-clone/base-city-yield-gold/Gold';
+import GoldYield from '@civ-clone/base-city-yield-gold/Gold';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 
@@ -21,8 +21,9 @@ export class Gold extends Action {
   }
 
   perform(): void {
-    const playerTreasury = this.#playerTreasuryRegistry.getByPlayer(
-      this.unit().player()
+    const playerTreasury = this.#playerTreasuryRegistry.getByPlayerAndType(
+      this.unit().player(),
+      GoldYield
     );
 
     playerTreasury.add(new GoldYield(50));
