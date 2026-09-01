@@ -8,7 +8,7 @@ import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 
 export class Gold extends Action {
-  #playerTreasuryRegistry: PlayerTreasuryRegistry;
+  private _playerTreasuryRegistry: PlayerTreasuryRegistry;
 
   constructor(
     goodyHut: GoodyHut,
@@ -17,11 +17,11 @@ export class Gold extends Action {
   ) {
     super(goodyHut, unit);
 
-    this.#playerTreasuryRegistry = playerTreasuryRegistry;
+    this._playerTreasuryRegistry = playerTreasuryRegistry;
   }
 
   perform(): void {
-    const playerTreasury = this.#playerTreasuryRegistry.getByPlayerAndType(
+    const playerTreasury = this._playerTreasuryRegistry.getByPlayerAndType(
       this.unit().player(),
       GoldYield
     );

@@ -3,7 +3,7 @@ import Action from '@civ-clone/core-goody-hut/Action';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 export declare class Gold extends Action {
-  #private;
+  private _playerTreasuryRegistry;
   constructor(
     goodyHut: GoodyHut,
     unit: Unit,
