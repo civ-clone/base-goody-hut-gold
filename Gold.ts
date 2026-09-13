@@ -8,6 +8,7 @@ import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 
 export class Gold extends Action {
+  static readonly transient = ['_playerTreasuryRegistry'];
   private _playerTreasuryRegistry: PlayerTreasuryRegistry;
 
   constructor(

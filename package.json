@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@civ-clone/base-city-yield-gold": "^0.1.0",
+    "@civ-clone/core-data-object": "^0.1.15",
     "@civ-clone/core-goody-hut": "^0.1.0",
     "@civ-clone/core-rule": "^0.1.0",
     "@civ-clone/core-treasury": "^0.1.0",

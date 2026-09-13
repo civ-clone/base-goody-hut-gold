@@ -15,5 +15,6 @@ class Gold extends Action_1.default {
     }
 }
 exports.Gold = Gold;
+Gold.transient = ['_playerTreasuryRegistry'];
 exports.default = Gold;
 //# sourceMappingURL=Gold.js.map
