@@ -7,7 +7,13 @@ import GoldYield from '@civ-clone/base-city-yield-gold/Gold';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 
+/**
+ * Tagged `GoldGoodyHut`: three packages declare a class called `Gold`, and a
+ * save records a class by name. See `base-city-yield-gold`.
+ */
 export class Gold extends Action {
+  static readonly type: string = 'GoldGoodyHut';
+
   static readonly transient = ['_playerTreasuryRegistry'];
   private _playerTreasuryRegistry: PlayerTreasuryRegistry;
 
