@@ -11,13 +11,22 @@
   "private": false,
   "scripts": {
     "build": "npm run ts:compile && npm run prettier:format",
-    "prettier:check": "prettier --config .prettierrc '**/*.ts'",
+    "prettier:check": "prettier --config .prettierrc --check '**/*.ts'",
     "prettier:format": "prettier --config .prettierrc '**/*.ts' --write",
+    "test": "ts-mocha ./tests/*.test.ts",
     "ts:compile": "tsc --build tsconfig.json"
   },
   "devDependencies": {
-    "prettier": "^2.1.2",
-    "typescript": "^4.0.3"
+    "@civ-clone/core-player": "^0.1.10",
+    "@civ-clone/core-world": "^0.1.24",
+    "@types/chai": "^4.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^16.0.0",
+    "chai": "^4.0.0",
+    "mocha": "^10.0.0",
+    "prettier": "^2.8.8",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.0.0"
   },
   "dependencies": {
     "@civ-clone/base-city-yield-gold": "^0.1.0",
@@ -26,5 +35,11 @@
     "@civ-clone/core-rule": "^0.1.0",
     "@civ-clone/core-treasury": "^0.1.0",
     "@civ-clone/core-unit": "^0.1.0"
-  }
+  },
+  "description": "The goody-hut action that gives the unit's player gold: 50, or the amount a ruleset passes.",
+  "files": [
+    "*.ts",
+    "*.js",
+    "*.js.map"
+  ]
 }

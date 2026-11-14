@@ -1,3 +1,4 @@
 # base-goody-hut-gold
 
-A `GoodyHut` that provides the `Unit`s `Player` with 50 `Gold`.
+A `GoodyHut` action that gives the `Unit`'s `Player` `Gold`: 50, or the amount a ruleset passes as the constructor's
+fourth argument (`amount()` reads it back).
