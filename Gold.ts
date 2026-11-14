@@ -8,6 +8,8 @@ import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import Unit from '@civ-clone/core-unit/Unit';
 
 /**
+ * The hut gives the unit's player `amount` gold, 50 unless a ruleset says otherwise.
+ *
  * Tagged `GoldGoodyHut`: three packages declare a class called `Gold`, and a
  * save records a class by name. See `base-city-yield-gold`.
  */
@@ -15,16 +17,23 @@ export class Gold extends Action {
   static readonly type: string = 'GoldGoodyHut';
 
   static readonly transient = ['_playerTreasuryRegistry'];
+  private _amount: number;
   private _playerTreasuryRegistry: PlayerTreasuryRegistry;
 
   constructor(
     goodyHut: GoodyHut,
     unit: Unit,
-    playerTreasuryRegistry: PlayerTreasuryRegistry = playerTreasuryRegistryInstance
+    playerTreasuryRegistry: PlayerTreasuryRegistry = playerTreasuryRegistryInstance,
+    amount: number = 50
   ) {
     super(goodyHut, unit);
 
+    this._amount = amount;
     this._playerTreasuryRegistry = playerTreasuryRegistry;
+  }
+
+  amount(): number {
+    return this._amount;
   }
 
   perform(): void {
@@ -33,7 +42,7 @@ export class Gold extends Action {
       GoldYield
     );
 
-    playerTreasury.add(new GoldYield(50));
+    playerTreasury.add(new GoldYield(this._amount));
   }
 }
 
